@@ -253,3 +253,26 @@ function drawImg(context,image)
 		context.drawImage(image,0+i*50,0+i*25,100,100);
 	}
 }
+
+function drawEnlarge(id)
+{
+	var canvas = document.getElementById(id);
+	if(canvas == null)
+		return false;
+	var context = canvas.getContext('2d');
+	context.fillStyle = "#EEEEFF";
+	context.fillRect(0,0,400,300);
+	image = new Image();
+	image.src = "pic1.jpg";
+	image.onload = function()
+	{
+		drawEnlargeImg(context,image);
+	};
+}
+
+function drawEnlargeImg(context,image)
+{
+	var i = 0;
+	context.drawImage(image,0,0,100,100);
+	context.drawImage(image,23,5,57,80,110,0,100,100);
+}
