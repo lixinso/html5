@@ -208,3 +208,24 @@ function drawComposite(id)
 	context.arc(60,60,30,0,Math.PI*2,false);
 	context.fill();
 }
+
+function drawShadow(id)
+{
+	var canvas = document.getElementById(id);
+	if(canvas == null)
+		return false;
+	var context = canvas.getContext('2d');
+	context.fillStyle = "#EEEEFF";
+	context.fillRect(0,0,400,300);
+	context.shadowOffsetX = 10;
+	context.shadowOffsetY = 10;
+	context.shadowColor = 'rgba(100,100,100,0.5)';
+	context.shadowBlur = 7.5;
+	context.translate(0,50);
+	for( var i = 0 ; i < 3 ; i++)
+	{
+		context.translate(50,50);
+		create5Star(context);
+		context.fill();
+	}
+}
