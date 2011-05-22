@@ -339,3 +339,26 @@ function create5StarClip(context)
 	}
 	context.clip();
 }
+
+/*seems doesn't work*/
+function drawRevertImage(id)
+{
+	var canvas = document.getElementById(id);
+	if(canvas == null)
+		return false;
+	var context = canvas.getContext('2d');
+	var image = new Image();
+	image.src = "pic1.jpg";
+	image.onload = function()
+	{
+		context.drawImage(image,0,0);
+		var imagedata = context.getImageData(0,0,image.width, image.height);
+		for(var i = 0 , n = imagedata.data.length; i < n ; i += 4)
+		{
+			imagedata.data[i+0] = 0;
+			imagedata.data[i+1] = 0;
+			imagedata.data[i+2] = 0;
+		}
+		context.putImageData(imagedata,0,0);
+ 	};
+}
