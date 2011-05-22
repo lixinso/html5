@@ -276,3 +276,19 @@ function drawEnlargeImg(context,image)
 	context.drawImage(image,0,0,100,100);
 	context.drawImage(image,23,5,57,80,110,0,100,100);
 }
+
+function drawCreatePattern(id)
+{
+	var image = new Image();
+	var canvas = document.getElementById(id);
+	if(canvas == null)
+		return false;
+	var context = canvas.getContext('2d');
+	image.src = "pic1.jpg";
+	image.onload = function()
+	{
+		var ptrn = context.createPattern(image,'repeat');
+		context.fillStyle = ptrn;
+		context.fillRect(0,0,400,300);
+	}
+}
