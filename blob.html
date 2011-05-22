@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="UTF-8">
+	<title>Blob showcase</title>
+	<script language="javascript">
+		function ShowFileType()
+		{
+			var file;
+			file = document.getElementById("file").files[0];
+			var size = document.getElementById("size");
+			size.innerHTML = file.size;
+			
+			var type=document.getElementById("type");
+			type.innerHTML = file.type;
+		}
+	</script>
+</head>
+
+Choose a File:
+<input type="file" id="file" />
+<input type="button" value="show file info" onclick="ShowFileType();" /><br/>
+Size: <span id="size"></span><br/>
+Type: <span id="type"></span>

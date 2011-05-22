@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<head>
+	<meta charset=UTF-8>
+	<title>FileList and File</title>
+</head>
+<script language="javascript">
+	function ShowFileName()
+	{
+		var file;
+		for(var i=0; i<document.getElementById("file").files.length; i++)
+		{
+			file=document.getElementById("file").files[i];
+			alert(file.name);
+		}
+	}
+</script>
+
+Please choose a file:
+<input type="file" id="file" mutiple size="80" />
+<input type="button" onclick="ShowFileName();" value="Upload File" />

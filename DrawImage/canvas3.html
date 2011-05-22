@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head>
+<meta charset="ANSI" />
+<title>Google </title>
+</head>
+<body bgcolor="white"><pre>
+<canvas id="myCanvas">
+HTML5 Canvas
+</canvas>
+<script type="text/javascript">
+<!--
+function drawCanvas()
+{
+ 
+var canvas=document.getElementById('myCanvas');
+var context=canvas.getContext('2d');
+context.fillStyle = '#00f';
+context.strokeStyle = '#f00';
+context.lineWidth = 5;
+context.beginPath();
+context.moveTo(10, 10); 
+context.lineTo(100, 10);
+context.lineTo(10, 100);
+context.lineTo(10, 10);
+context.stroke();
+context.closePath();
+}
+drawCanvas();
+-->
+</script>
+</body></html>

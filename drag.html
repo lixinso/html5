@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<head>
+	<meta charset=UTF-8>
+	<title>Drag Sample</title>
+	<script type="javascript">
+	function init()
+	{
+		var source = document.getElementById("dragme");
+		var dest = document.getElementById("text");
+		source.addEventListener("dragstart",function(ev)
+		{
+			var dt = dv.dataTransfer;
+			dt.effectAllowed = "all";
+			dt.setData("text/plain","Hello");
+		},false);
+		
+		dest.addEventListener("dragend",function(ev){
+			ev.preventDefault();
+		},false);
+		
+		dest.addEventListener("drop",function(ev){
+			var dt = ev.dataTransfer;
+			var text = dt.getData("text/plain");
+			dest.textContent += text;
+			ev.preventDefault;
+			ev.stopPropagation();
+		},false);
+		document.ondragover = function(e){e.preventDefault();}
+		document.ondrop = function(e){e.preventDefault();}
+	}
+	</script>
+</head>
+<body onload="init()">
+	<h1>Drag Sample</h1>
+	<div id="dragme" draggble="true" style="width: 200px; border: 1px solid gray;">
+		Please Drag
+	</div>
+	<div id="text" style="width: 200px; height: 200px; border: 1px solid gray;"></div>
+</body>

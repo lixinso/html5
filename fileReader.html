@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="UTF-8">
+	<title>FileReader Sample</title>
+</head>
+<script language="javascript">
+	var result = document.getElementById("result");
+	var file=document.getElementById("file");
+	if(typeof FileReader == 'undefined')
+	{
+		result.innerHTML = "<p>Sorry Your Browser doesn't support FileReader</p>";
+		file.setAtrribute('disabled','disabled');
+	}
+	
+	function readAsDataURL()
+	{
+		var file=document.getElementById("file").files[0];
+		if(!/image\/\w+/.test(file.type))
+		{
+			alert("make sure your file type is image");
+			return false;
+		}
+		var reader = new FileReader();
+		reader.readAsDataURL(file);
+		reader.onload = function(e)
+		{
+			var result = document.getElementById("result");
+			result.innerHTML = '<img src="' + this.result + '" alt="" />';
+		}
+	}
+	
+	function readAsBinnaryString()
+	{
+		var file=document.getElementById("file").files[0];
+		var reader = new FileReader();
+		reader.readAsBinnaryString(file);
+		reader.onload = function(f)
+		{
+			var result = document.getElementById("result");
+			result.innerHTML = this.result;
+		}
+	}
+	
+	function readAsText()
+	{
+		var file = document.getElementById("file").files[0];
+		var reader = new FileReader();
+		reader.readAsText(file);
+		reader.onload = function(f)
+		{
+			var result = document.getElementById("result");
+			result.innerHTML = this.result;
+		}
+	}
+</script>
+
+<p>
+	<label>Please Choose a file</label>
+	<input type="file" id="file"/>
+	<input type="button" value="Read Image" onclick="readAsDataURL()" />
+	<input type="button" value="Read Binary" onclick="readAsBinaryString()" />
+	<input type="button" value="Read Text" onclick="readAsText()" />
+</p>
+<div name="result" id="result">
+</div>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<meta charset=UTF-8>
+<title>Progress Bar Sample</title>
+<script>
+	var progressBar = document.getElementById('p');
+	function button_onclick()
+	{
+		var progressBar = document.getElementById('p');
+		progressBar.getElementByTagName('span')[0].textContent="0";
+		for(var i = 0; i <= 100; i++)
+			updateProgress(i);
+	}
+	
+	function updateProgress(newValue)
+	{
+		var progressBar = document.getElementById('p');
+		progressBar.value = newValue;
+		progressBar.getElementTagName('span')[0].textContent = newValue;
+	}
+</script>
+
+<section>
+	<h2>Progress Element Sample</h2>
+	<p>Percent Finished: <progress id="p" max=100><span>0</span> % </progress></p>
+	<input type="button" onclick="button_onclick()" value="Please click" />
+</section>

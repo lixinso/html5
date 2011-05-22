@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="UTF-8">
+	<title>Custom Error Check Sample</title>
+	<script language="javascript">
+		function check()
+		{
+			var pass1 = document.getElementById("pass1");
+			var pass2 = document.getElementById("pass2");
+			if(pass1.value != pass2.value)
+				pass2.setCustomValidity("Password is inconsistant");
+			else
+				pass2.setCustomValidity("");
+				
+				var email = document.getElementById("email");
+				if(!email.checkValidity())
+					email.setCustomValidity("Please input the right email");
+		}
+	</script>
+	<form id="testform" onSubmit="return check();">
+		Pasword: <input type=password name="pass1" id="pass1"/><br/>
+		Confirm Password: <input type=password name="pass2" id="pass2"/><br/>
+		Email: <input type=email name="email1" id="email"/><br/>
+		<input type="submit" />
+	</form>
+</head>
