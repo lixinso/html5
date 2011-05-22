@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="UTF-8">
+	<title>List attr sample</title>
+</head>
+
+text <input type="text" name="greeting" list="greetings">
+<datalist id="greetings" style="display: none">
+	<option value="Good Morning">Good Morning</option>
+	<option value="Hello">Hello</option>
+	<option value="good afternoon">good afternoon</option>
+</datalist>
+
+<input type="text" name="greeting" autocomplete="on" list="greetings">
+
+<input name="url1" type="url" value="http://www.sina.com.cn">
+<input name="email1" type="email" value="lixinso@gmail.com">
+<input name="time1" type="time" value="10:00">
+<input name="range1" type="range" value="25" min="0" max="100" step="5">
