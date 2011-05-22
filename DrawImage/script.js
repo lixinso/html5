@@ -143,3 +143,68 @@ function create5Star(context)
 	}
 	context.closePath();
 }
+
+function drawTransform(id)
+{
+	var canvas = document.getElementById(id);
+	if(canvas == null)
+		return;
+	var context = canvas.getContext('2d');
+	var colors = ["red","orange","yellow","greeen","blue","navy","purple"];
+	context.lineWidth = 10;
+	context.transform(1,0,0,1,100,0);
+	for(var i = 0 ;i < colors.length; i++)
+	{
+		context.transform(1,0,0,1,0,10);
+		context.strokeStyle = colors[i];
+		context.beginPath();
+		context.arc(50,100,100,0,Math.PI,true);
+		context.stroke();
+	}
+}
+
+function drawSetTransform(id)
+{
+	var canvas = document.getElementById(id);
+	if(canvas == null)
+		return false;
+	var context = canvas.getContext('2d');
+	
+	 
+	context.strokeStyle = "red";
+	context.strokeRect(30,10,60,20);
+	
+	var rad = 45*Math.PI / 180;
+	context.setTransform(Math.cos(rad),Math.sin(rad),-Math.sin(rad),Math.cos(rad),0,0);
+	context.strokeStyle = "blue";
+	context.strokeRect(30,10,60,20);
+	
+}
+
+function drawComposite(id)
+{
+	var canvas = document.getElementById(id);
+	if(canvas == null)
+		return false;
+	var context = canvas.getContext('2d');
+	var oprtns = new Array(
+		"source-atop",
+		"source-in",
+		"source-out",
+		"source-over",
+		"destination-atop",
+		"destination-in",
+		"destination-out",
+		"destination-over",
+		"lighter",
+		"copy",
+		"xor"
+		);
+	context.fillStyle="blue";
+	context.fillRect(10,10,60,60);
+	context.globalCompositeOperation = oprtns[2];
+	context.beginPath();
+	context.fillStyle = "red";
+	context.arc(60,60,30,0,Math.PI*2,false);
+	context.fill();
+}
