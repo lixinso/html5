@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8"></meta>
+		<script>
+			var video;
+			function init()
+			{
+				video = document.getElementById("video1");
+				video.addEventListener("ended",function(){
+					alert("End Play");
+				},true);
+				
+				video.addEventListener("error",function(){
+					switch(video.error.code)
+					{
+						case MediaError.MEDIA_ERROR_ABORTED:
+							alert("media aborted when download");
+							break;
+						case MediaError.MEDIA_ERROR_NETWORK:
+							alert("Network error");
+							break;
+						case MediaError.MEDIA_ERROR_DECODE:
+							alert("Decode error");
+							break;
+						case MediaError.MEDIA_ERROR_SRC_NOT_SUPPORTED:
+							alert("Can not play it");
+							break;
+						default:
+							alert("unkown error");
+					}
+				},false);
+			}
+			
+			function play()
+			{
+				video.play();
+			}
+			
+			function pause()
+			{
+				video.pause();
+			}
+			
+		</script>
+	</head>
+	<body onload="init()">
+		<video id="video1" src="video11.ogv">
+		</video><br/>
+		<button onclick="play()">PLAY</button>
+		<button onclick="pause()">PAUSE</button>
+	</body>
+</html>
