@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>media player</title>
+		<script>
+			function playOrPauseVideo()
+			{
+				
+				var videoUrl = document.getElementById("videoUrl").value;
+ 				var video = document.getElementById("video");
+ 				video.addEventListener("timeupdate",function(){
+ 					var timeDisplay = document.getElementById("time");
+					timeDisplay.innerHTML = Math.floor(video.currentTime) + " / " + Math.floor(video.duration) + "second(s)";
+ 				},false);
+ 				if(video.paused)
+				{
+					if(videoUrl != video.src)
+					{
+						video.src = videoUrl;
+						video.load();
+					}
+					else
+					{
+						video.play();
+					}
+					document.getElementById("playButton").value = "PAUSE";
+				}
+				else
+				{
+					video.pause();
+					document.getElementById("playButton").value = "PLAY";
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<video id="video"   width="400" height="300" autoplay loop="loop">
+		</video>
+		<br/>
+		VideoUrl <input type="text" id="videoUrl" />
+		<input id="playButton" type="button" onclick="playOrPauseVideo()" value="PLAY"/>
+		<span id="time"></span>
+	</body>
+</html>
