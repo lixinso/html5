@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="UTF-8">
+	<script type="text/javascript">
+	var worker = new Worker("SumCalculate.js");
+	worker.onmessage = function(event)
+	{
+		alert("the result is:" + event.data + " . ");
+	};
+	
+	function calculate()
+	{
+		var num = parseInt(document.getElementById("num").value,10);
+		worker.postMessage(num);
+	}
+	</script>
+</head>
+<body>
+	<h1>Sum from 1 to num </h1>
+	Input a Num <input type="text" id="num">
+	<button onclick="calculate()">Calculate</button>
+</body>
