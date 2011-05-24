@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="UTF-8">
+	<title>Notebook use database</title>
+	<script type="text/javascript" src="webstorage_db_note.js"></script>
+</head>
+<body onload="init();">
+	<h1>Notebook use datbase</h1>
+	<table>
+		<tr>
+			<td>Name:</td>
+			<td><input type="text" id="name"></td>
+		</tr>
+		<tr>
+			<td>Message:</td>
+			<td><input type="text" id="memo"></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td><input type="button" value="save" onclick="saveData();"></td>
+		</tr>
+	</table>
+	<table id="database" border="1"></table>
+	<p id="msg"></p>
+</body>
+</html>
