@@ -49,7 +49,7 @@ function showAllData()
 	
 		tx.executeSql('CREATE TABLE IF NOT EXISTS MsgData2(name TEXT, message TEXT, time INTEGER)',[]);
 			alert("here2");
-		tx.executeSql('SELECT * FROM MsgData', [], function(tx,rs)
+		tx.executeSql('SELECT * FROM MsgData2', [], function(tx,rs)
 		{
 			removeAllData();
 			for( var i = 0 ; i < rs.rows.length; i++)
@@ -57,6 +57,7 @@ function showAllData()
 				showData(rs.rows.item(i));
 			}
 		});
+			alert("here3");
 	});
 }
 
