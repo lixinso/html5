@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="UTF-8">
+	<script type="text/javascript">
+		var worker = new Worker("embeded_worker1.js");
+		worker.postMessage("");
+		worker.onmessage = function(event){
+			if(event.data != "")
+			{
+				var j;
+				var k;
+				var tr;
+				var td;
+				var intArray = event.data.split(";");
+				var table = document.getElementById("table");
+				for(var i = 0 ; i < intArray.length; i++)
+				{
+					j = parseInt(i/10,0);
+					k = i % 10;
+					if( k == 0)
+					{
+						tr = document.createElement("tr");
+						tr.id = "tr" + j;
+						table.appendChild(tr);
+					}
+					else
+					{
+						tr = document.getElementById("tr"+j);
+					}
+					td = document.createElement("td");
+					tr.appendChild(td);
+					td.innerHTML = intArray[j*10 + k];
+					td.style.backgroundColor = "blue";
+					td.style.color = "white";
+					td.width = "30";
+				}
+			}
+		};
+	</script>
+</head>
+<body>
+	<h1>Random Generate num and filter Mod 3</h1>
+	<table id="table">
+	</table>
+</body>
