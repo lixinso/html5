@@ -5,7 +5,7 @@ function saveStorage(id)
 	sessionStorage.setItem("message",str);
 }
 
-funtion loadStorage(id)
+function loadStorage(id)
 {
 	var target = document.getElementById(id);
 	var msg = sessionStorage.getItem("message");
