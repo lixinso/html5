@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="UTF-8">
+	<title>Simple Web Notebook</title>
+	<script type="text/javascript" src="webstorage_note.js"></script>
+</head>
+<body>
+	<h1>Simple Web Storage Notebook</h1>
+	<textarea id="memo" cols="60" rows="10"></textarea><br>
+	<input type="button" value="append" onclick="saveStorage('memo');">
+	<input type="button" value="init" onclick="clearStorage('msg');">
+	<hr>
+	<p id="msg"></p>
+</body>
+</html>
