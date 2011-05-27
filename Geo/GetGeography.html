@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<head>
+	<meta name="viewpoint" content="initial-scale=1.0, user-scalable=no" />
+	<title>Get Current Geography Info</title>
+	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false" />
+	<script type="text/javascript">
+		function showObject(obj,k){
+			if(!obj){ return; }
+			for(var i in obj){
+				if(typeof(obj[i]) != "object" || obj[i] == null){
+					for(var j = 0; j < k; j++){
+						document.write("&nbsp;&nbsp;&nbsp;&nbsp;");						
+					}
+					document.write(i + " : " + obj[i] + "<br/>");
+				}else
+				{
+					document.write(i + " : " + "<br/>");
+					showObject(obj[i], k + 1);
+				}
+			}
+		}
+		
+		function get_location(){
+			if(navigator.geolocation){				navigator.geolocation.getCurrentPosition(show_map,handle_error,{enableHighAccuracy:true,maximumAge:1000});
+			}else{
+				alert("Your browser doesn't support GEO");
+			}
+		}
+		
+		function handle_error(err){
+			switch(err.code){
+				case 1:
+					alert("Location Service Refused");
+					break;
+				case 2:
+					alert("Can not get location info currently");
+					break;
+				case 3:
+					alert("Time out");
+					break;
+				default:
+					alert("unkonw error");
+					break;
+			}
+		}
+		
+		function show_map(position){
+			var latitude = position.coords.latitude;
+			var longitude = position.coords.longitude;
+			showObject(position,0);
+		}
+		get_location();
+	</script>
+</head>
+<body>
+	<div id="map" style="width:400px; height:400px"></div>
+</body>
