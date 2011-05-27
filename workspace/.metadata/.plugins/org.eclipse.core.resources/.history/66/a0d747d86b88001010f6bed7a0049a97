@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+	[id$=\-1]{
+		background-color: yellow;
+	}
+	
+</style>
+</head>
+<body>
+	<div id="section1" class="divYellow">Sample Text 1</div>
+	<div id="subsection1-1">Sample Text 1-1</div>
+	<div id="subsection1-2">Sample Text 1-2</div>
+	<div id="section2">Sample Text 2</div>
+	<div id="subsection2-1">Sample Text 2-1</div>
+	<div id="subsection2-2">Sample Text 2-2</div>
+</body>
+</html>

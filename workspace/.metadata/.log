@@ -1,0 +1,24 @@
+!SESSION 2011-05-27 21:06:12.506 -----------------------------------------------
+eclipse.buildId=M20110210-1200
+java.version=1.6.0_24
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=cocoa, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product -keyring /Users/admin/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws cocoa -arch x86 -product org.eclipse.epp.package.jee.product -keyring /Users/admin/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2011-05-27 21:08:02.511
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.eclipse.wst.common.project.facet.ui 4 0 2011-05-27 21:08:21.764
+!MESSAGE Runtime component type org.mortbay.jetty.serveradaptor.runtime has not been defined. It is used in plugin org.mortbay.jetty.serveradaptor.
+
+!ENTRY org.eclipse.ui.workbench 2 0 2011-05-27 22:15:15.359
+!MESSAGE A handler conflict occurred.  This may disable some commands.
+!SUBENTRY 1 org.eclipse.ui.workbench 2 0 2011-05-27 22:15:15.359
+!MESSAGE Conflict for 'org.eclipse.wst.jsdt.ui.edit.text.java.open.editor':
+HandlerActivation(commandId=org.eclipse.wst.jsdt.ui.edit.text.java.open.editor,
+	handler=ActionHandler(org.eclipse.wst.jsdt.ui.actions.OpenAction@1ccc22d),
+	expression=AndExpression(AndExpression(org.eclipse.ui.SubActionBars$1@1ee88dd,ActivePartExpression(org.eclipse.ui.navigator.resources.ProjectExplorer@875750)),WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@94fe42)),sourcePriority=1064961)
+HandlerActivation(commandId=org.eclipse.wst.jsdt.ui.edit.text.java.open.editor,
+	handler=ActionHandler(org.eclipse.wst.jsdt.ui.actions.OpenAction@1ccc22d),
+	expression=AndExpression(AndExpression(org.eclipse.ui.SubActionBars$1@1ee88dd,ActivePartExpression(org.eclipse.ui.navigator.resources.ProjectExplorer@875750)),WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@94fe42)),sourcePriority=1064961)
