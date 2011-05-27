@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Insert title here</title>
+<style type="text/css">
+
+:target{
+	background-color: yellow
+}
+
+</style>
+</head>
+<body>
+
+<p id="menu">
+	<a href="#text1">Sample1</a>
+	<a href="#text2">Sample2</a>
+</p>	
+
+
+<div id="text1">
+Text 1
+</div>
+
+<div id="text2">
+Text 2
+</div>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+	
+	a[href$=\/]:after,a[href$=htm]:after,a[href$=html]:after{
+		content:" Web Page";
+		color: red;
+	}
+	
+	a[href$=jpg]:after{
+		content:" JPEG Image File";
+		color: green;
+	}
+	
+</style>
+</head>
+<body>
+
+	<ul>
+		<li><a href="http://google.com/">HTML5+CSS</a></li>
+		<li><a href="http://www.baidu.com/test.htm">CSS3 New</a></li>
+		<li><a href="http://test/test.html">After HTML</a></li>
+		<li><a href="photo.jpg">After JPG</a></li>
+	</ul>
+</body>
+</html>
