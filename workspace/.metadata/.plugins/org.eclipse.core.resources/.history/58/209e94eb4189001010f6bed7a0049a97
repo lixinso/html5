@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Insert title here</title>
+<style type="text/css">
+	div{
+		background-color:red;
+	}
+	@-webkit-keyframes mycolor{
+		0%{
+			background-color: red;
+		}
+		40%{
+			background-color:  darkblue;
+		}
+		70%{
+			background-color:yellow;
+		}
+		100%{
+			background-color:red;
+		}
+	}
+	div#hover{
+		-webkit-animation-name: mycolor;
+		-webkit-animation-duration: 5s;
+		-webkit-animation-timing-function: linear;
+	}
+</style>
+</head>
+<body>
+	<div>Sample Text</div>
+</body>
+</html>
+
+
+<!-- doesn't work with xx? -->
