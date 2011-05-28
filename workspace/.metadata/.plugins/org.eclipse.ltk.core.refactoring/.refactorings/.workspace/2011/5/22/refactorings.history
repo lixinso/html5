@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete resource &apos;CSS3/WebContent/box/box_overflow.html&apos;" deleteContents="false" description="Delete resource &apos;CSS3/WebContent/box/box_overflow.html&apos;" element1="/CSS3/WebContent/box/box_overflow.html" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1306548107968"/>
+</session>
