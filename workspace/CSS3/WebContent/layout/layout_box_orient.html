@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Insert title here</title>
+<style type="text/css">
+
+	#container{
+		display: -webkit-box;
+		-webkit-box-orient: vertical;
+	}
+	#left-sidebar{
+		-webkit-box-ordinal-group: 3;
+		width: 200px;
+		padding: 20px;
+		background-color: orange;
+	}
+	#contents{
+		-webkit-box-ordinal-group: 1;
+		-webkit-box-flex: 1;
+		padding: 20px;
+		background-color: yellow;
+	}
+	#right-sidebar{
+		-webkit-box-ordinal-group: 2;
+		width: 200px;
+		padding: 20px;
+		background-color: limegreen;
+	}
+	#right-sidebar, #contents, #right-sidebar{
+		-webkit-box-sizing: border-box;
+	}
+
+</style>
+</head>
+<body>
+	
+	<div id="container">
+		<div id="left-sidebar">
+			<h2>Left Side Bar</h2>
+			<ul>
+				<li>Link1</li>
+				<li>Link1</li>
+				<li>Link1</li>
+				<li>Link1</li>
+				<li>Link1</li>
+				<li>Link1</li>
+			</ul>
+		</div>
+		<div id="contents">
+			<p>
+				 Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text
+				  Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text
+				   Text Text Text Text Text Text Text Text Text Text
+			</p>
+		</div>
+		<div id="right-sidebar">
+			<h2>Right Bar</h2>
+			<ul>
+				<li>Link1</li>
+			</ul>
+		</div>
+	</div>
+	
+</body>
+</html>

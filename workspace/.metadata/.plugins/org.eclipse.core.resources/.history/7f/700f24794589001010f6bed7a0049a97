@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Insert title here</title>
+<style type="text/css">
+
+	#container{
+		display: -webkit-box;
+	}
+	#left-sidebar{
+		width: 200px;
+		padding: 20px;
+		background-color: orange;
+	}
+	#contents{
+		width: 300px;
+		padding: 20px;
+		background-color: yellow;
+	}
+	#right-sidebar, #contents, #right-sidebar{
+		
+	}
+
+</style>
+</head>
+<body>
+	<div id="div1">
+		<img src="../images/bill2.jpg"/>
+		<p>Sample Text 1 Text 1 Text 1 Text 1 Text 1 Text 1 Text 1 Text 1 Text 1 Text 1 Text 1 Text 1 Text 1
+		 Text 1 Text 1 Text 1 Text 1 Text 1 Text 1 Text 1 Text 1 Text 1 Text 1 Text 1 Text 1 Text 1 Text 1
+		  Text 1 Text 1 Text 1 Text 1 Text 1 Text 1 Text 1 Text 1 Text 1 Text 1 Text 1 Text 1 Text 1 Text 1
+		   Text 1 Text 1 Text 1 Text 1 Text 1 Text 1 Text 1 Text 1 Text 1 Text 1 Text 1 Text 1
+		 </p>
+		 <p>
+		 	 Text2  Text2 Text2 Text2 Text2 Text2 Text2 Text2 Text2 Text2 Text2 Text2 Text2 Text2 Text2
+		 	  Text2 Text2 Text2 Text2 Text2 Text2 Text2 Text2 Text2 Text2 Text2 Text2 Text2 Text2 Text2
+		 	   Text2 Text2 Text2 Text2 Text2 Text2 Text2 Text2 Text2 Text2 Text2 Text2 Text2 Text2 Text2
+		 	    Text2 Text2 Text2 Text2 Text2 Text2 Text2 Text2 Text2 Text2 Text2 Text2 Text2 Text2 Text2
+		 </p>
+	</div>
+	<div id="div3">
+		Other content
+	</div>
+</body>
+</html>
