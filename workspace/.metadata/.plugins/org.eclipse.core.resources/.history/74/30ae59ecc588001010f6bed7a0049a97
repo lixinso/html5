@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Insert title here</title>
+<style type="text/css">
+
+	@font-face{
+		font-family: Arial;
+		src: local('Arial');
+	}
+
+	@font-face{
+		font-family: Arial;
+		font-weight: bold;
+		src: local('Arial Black');
+	}
+	
+	div{
+		font-family: Arial;
+		font-size: 40px;
+	}
+	
+	div#div1
+	{
+		font-weight: normal;
+	}
+	
+	div#div2
+	{
+		font-weight: bold;
+	}
+
+
+</style>
+</head>
+<body>
+	<div id="div1">DIV1 TEXT</div>
+	<div id="div2">DIV2 TEXT</div>
+	
+</body>
+</html>
