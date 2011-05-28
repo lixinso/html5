@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>TowerDefense</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+	</buildSpec>
+	<natures>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>tower_defense</name>
+			<type>2</type>
+			<locationURI>PARENT-3-PROJECT_LOC/tower_defense/tower_defense</locationURI>
+		</link>
+	</linkedResources>
+</projectDescription>

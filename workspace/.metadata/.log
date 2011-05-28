@@ -22,3 +22,9 @@ HandlerActivation(commandId=org.eclipse.wst.jsdt.ui.edit.text.java.open.editor,
 HandlerActivation(commandId=org.eclipse.wst.jsdt.ui.edit.text.java.open.editor,
 	handler=ActionHandler(org.eclipse.wst.jsdt.ui.actions.OpenAction@1ccc22d),
 	expression=AndExpression(AndExpression(org.eclipse.ui.SubActionBars$1@1ee88dd,ActivePartExpression(org.eclipse.ui.navigator.resources.ProjectExplorer@875750)),WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@94fe42)),sourcePriority=1064961)
+
+!ENTRY org.eclipse.ui.navigator 4 0 2011-05-28 18:19:16.641
+!MESSAGE Cannot find navigator content extension (using triggerPoints) for object "<null>" parent path: "P/TowerDefense".  Check that you have an expression for this object in a navigatorContent triggerPoints or enablement.
+
+!ENTRY org.eclipse.ui.navigator 4 0 2011-05-28 18:19:16.661
+!MESSAGE Cannot find navigator content extension (using triggerPoints) for object "<null>" parent path: "P/TowerDefense".  Check that you have an expression for this object in a navigatorContent triggerPoints or enablement.
