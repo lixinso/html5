@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Insert title here</title>
+<style type="text/css">
+
+body{
+	margin: 20px 0;
+}
+
+#container{
+	width: 960px;
+	margin: auto;
+}
+
+#wrapper{
+	width: 740px;
+	float: left;
+}
+
+p{
+	line-height: 600px;
+	text-align: center;
+	font-weight: bold;
+	font-size: 2em;
+	margin: 0 0 20px 0;
+}
+
+#main{
+	width: 520px;
+	float: right;
+	background: yellow;
+}
+
+#sub01{
+	width: 200px;
+	float: left;
+	background: orange;
+}
+
+#sub02{
+	width: 200px;
+	float: right;
+	background: green;
+}
+
+@media screen and (min-width: 1000px){
+	#container{
+		width: 1000px;
+	}
+	#wrapper{
+		width: 780px;
+		float: left;
+	}
+	#main{
+		width: 560px;
+		float: right;
+	}
+	#sub01{
+		width: 200px;
+	}
+}
+</style>
+</head>
+<body>
+
+</body>
+</html>
