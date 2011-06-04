@@ -1,4 +1,4 @@
-#Sat May 28 19:16:20 CST 2011
+#Sun May 29 09:41:31 CST 2011
 useQuickDiffPrefPage=true
 tabWidthPropagated=true
 proposalOrderMigrated=true
@@ -10,4 +10,5 @@ org.eclipse.wst.jsdt.ui.javadoclocations.migrated=true
 eclipse.preferences.version=1
 org.eclipse.wst.jsdt.ui.editor.tab.width=
 fontPropagated=true
+org.eclipse.wst.jsdt.internal.ui.navigator.layout=1
 org.eclipse.wst.jsdt.ui.formatterprofiles.version=11

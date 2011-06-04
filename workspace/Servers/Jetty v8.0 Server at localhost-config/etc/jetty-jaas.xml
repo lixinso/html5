@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Configure PUBLIC "-//Mort Bay Consulting//DTD Configure//EN" "http://www.eclipse.org/jetty/configure.dtd">
+<Configure class="org.eclipse.jetty.server.Server" id="Server">
+
+  
+    <!-- ======================================================== -->
+    <!-- java.security.auth.login.config System property          -->
+    <!-- This is usually a runtime parameter to the jvm, but      -->
+    <!-- it is placed here for convenience.                       -->
+    <!-- ======================================================== -->
+    <Call class="java.lang.System" name="setProperty">
+      <Arg>java.security.auth.login.config</Arg>
+      <Arg><SystemProperty default="." name="jetty.home"/>/etc/login.conf</Arg>
+    </Call>
+
+
+    <!-- ======================================================== -->
+    <!-- An example JAAS realm setup                              -->
+    <!-- ======================================================== -->
+    <Call name="addBean">
+      <Arg>
+          <New class="org.eclipse.jetty.plus.jaas.JAASLoginService">
+           <Set name="Name">Test JAAS Realm</Set>
+           <Set name="LoginModuleName">xyz</Set>
+          </New>
+      </Arg>
+    </Call>
+
+</Configure>

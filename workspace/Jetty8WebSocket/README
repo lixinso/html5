@@ -1,0 +1,28 @@
+Jetty Version: jetty-hightide-8.0.0.M2  , 
+download from http://dist.codehaus.org/jetty/jetty-hightide-8.0.0.M2/
+
+JDK:1.6
+
+Eclipse Version: Helios
+
+Introduction to use Jetty WebSocket Server
+http://blogs.webtide.com/gregw/entry/jetty_websocket_server
+
+Jetty Src with sample code:
+svn co http://dev.eclipse.org/svnroot/rt/org.eclipse.jetty/jetty/branches/jetty-8
+test-jetty-webapp/src/main/webapp/ws/index.html
+
+jetty-wtp: For Jetty 7 & 8
+http://download.eclipse.org/jetty/updates/jetty-wtp/development
+
+Jetty Wiki:
+http://wiki.eclipse.org/Jetty
+
+Using Jetty with Eclipse 
+http://wiki.eclipse.org/Jetty/HowTo/Using_Jetty_with_Eclipse
+
+
+======================================================================
+
+To Deploy:
+Export war file to Jetty's webapps folder.
