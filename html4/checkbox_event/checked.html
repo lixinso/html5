@@ -1,0 +1,31 @@
+<!DOCTYPE   HTML   PUBLIC   "-//W3C//DTD   HTML   4.0   Transitional//EN "> 
+<HTML> 
+<HEAD> 
+<TITLE>   New   Document   </TITLE> 
+<META   NAME= "Generator "   CONTENT= "EditPlus "> 
+<META   NAME= "Author "   CONTENT= " "> 
+<META   NAME= "Keywords "   CONTENT= " "> 
+<META   NAME= "Description "   CONTENT= " "> 
+<SCRIPT   LANGUAGE= "javascript"> 
+function func(){ 
+  alert("111");
+  var a=document.getElementById("checkbox1");
+  if(a.checked==true){ 
+    alert( '222 ') 
+    document.getElementsByName( "account")[0].readOnly=false 
+  }else{ 
+    alert( '333') 
+    document.getElementsByName( "account")[0].readOnly=true 
+} 
+
+} 
+
+</SCRIPT> 
+</HEAD> 
+
+<BODY> 
+<input   type='checkbox' name='checkbox1' id="checkbox1" onclick="func()" > 
+<input   name= 'account' value=''   size= '6'> 
+
+</BODY> 
+</HTML> 
