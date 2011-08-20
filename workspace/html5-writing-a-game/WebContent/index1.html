@@ -6,9 +6,14 @@
 <script type="text/javascript"><!--
 	var backgroundForestImg = new Image();
 	var mushroomImg = new Image();
+	var bearEyesClosedImg = new Image();
 	var ctx;
 	var screenWidth;
 	var screenHeight;
+	var speed = 2; //?
+	var horizontalSpeed = speed;
+	var verticalSpeed = -speed;
+	var bearAngle = 2;
 
 	function GameObject()
 	{
@@ -18,10 +23,14 @@
 	}
 
 	function Mushroom(){};
-
 	Mushroom.prototype = new GameObject();
-
 	var mushroom = new Mushroom();
+	
+	function Animal(){};
+	Animal.prototype = new GameObject();
+	Animal.prototype.angle = 0;
+
+	var animal = new Animal();
 
 	function gameLoop()
 	{
@@ -29,6 +38,14 @@
 		ctx.save();
 		ctx.drawImage(backgroundForestImg,0,0);
 		ctx.drawImage(mushroom.image,mushroom.x,mushroom.y);
+
+		animal.x += horizontalSpeed;
+		animal.y += verticalSpeed;
+		animal.angle += bearAngle;
+		ctx.translate(animal.x + (animal.image.width/2), animal.y + (animal.image.height/2)); //以当前的熊的位置为基准？
+		ctx.rotate(animal.angle * Math.PI/180);
+		ctx.drawImage(animal.image, -(animal.image.width/2),-(animal.image.height/2));
+		
 		ctx.restore();
 	}
 
@@ -36,6 +53,7 @@
 	{
 		mushroomImg.src = "images/mushroom.png";
 		backgroundForestImg.src = "images/forest1.jpg";
+		bearEyesClosedImg.src = "images/bear_eyesclosed.png";
 	}
 
 	function addEventHandlers()
@@ -54,6 +72,9 @@
 		mushroom.image = mushroomImg;
 		mushroom.x = parseInt(screenWidth/2);
 		mushroom.y = screenHeight - 40;
+		animal.image = bearEyesClosedImg;
+		animal.x = parseInt(screenWidth/2);
+		animal.y = parseInt(screenHeight/2);
 		setInterval(gameLoop,10);
 	});
 	
