@@ -18,12 +18,22 @@
 	var verticalSpeed = -speed;
 	var bearAngle = 2;
 
+	var gameRunning = false;
+	var gameloopId;
+
+	var lives = 3;
+	var livesImages = new Array();
+
+	var score = 0;
+	var scoreImg = new Image();
+
 	var prizes = new Array();
 	function Prize(){};
 	Prize.prototype = new GameObject();
 	Prize.prototype.row = 0;
 	Prize.prototype.col = 0;
 	Prize.prototype.hit = false;
+	Prize.prototype.point = 0;
 
 	function GameObject()
 	{
@@ -58,21 +68,44 @@
 
 		if(animal.y > screenHeight - animal.image.height)
 		{
+			/*
 			setTimeout(function(){
 				horizontalSpeed = speed;
 				verticalSpeed = -speed;
 				animal.x = parseInt(screenWidth/2);
 				animal.y = parseInt(screenHeight/2);
 				gameLoop();
-			},2000);
+			},2000);*/
+
+			lives -=1;
+			if(lives > 0)
+			{
+				horizontalSpeed = speed;
+				verticalSpeed = -speed;
+				animal.x = parseInt(screenWidth/2);
+				animal.y = parseInt(screenHeight/2);
+				$("#BtnImgStart").show();
+				toggleGameplay();
+				gameLoop();
+			}
 		}
 
 		if(animal.y < 0)
 		{
 			verticalSpeed = -verticalSpeed;
 		}
+
+		if(lives <=0 )
+			gameOver();
 	}
 
+	function gameOver()
+	{
+		gameRunning = false;
+		clearInterval(gameloopId);
+		alert("game over");
+	}
+	
 	function InitPrizes()
 	{
 		var count = 0;
@@ -82,11 +115,23 @@
 			{
 				prize = new Prize();
 				if(x==0)
+				{
 					prize.image = flowerImg;
+					prize.point = 3;
+				}
+				
 				if(x==1)
+				{
 					prize.image = acornImg;
+					prize.point = 2;
+				}
+					
 				if(x==2)
+				{
 					prize.image = leafImg;
+					prize.point = 1;
+				}
+					
 				prize.row = x;
 				prize.col = y;
 				prize.x = 20*prize.col + 10;
@@ -97,6 +142,7 @@
 		}
 	}
 
+
 	function DrawPrizes()
 	{
 		for(var x=0; x<prizes.length;x++)
@@ -106,10 +152,24 @@
 			{
 				ctx.drawImage(currentPrize.image,prizes[x].x,prizes[x].y);				
 			}
-
+		}
+		if(allPrizeHit())
+		{
+			gameOver();
 		}
 	}
 
+	function allPrizeHit()
+	{
+		for(var c=0; c<prizes.length;c++)
+		{
+			checkPrize = prizes[c];
+			if(checkPrize.hit == false)
+				return false;
+		}
+		return true;
+	}
+	
 	function hasAnimalHitPrize()
 	{
 		for(var x=0; x<prizes.length;x++)
@@ -121,9 +181,17 @@
 				{
 					prize.hit = true;
 					verticalSpeed = speed;
+					score += prize.point;
 				}
 			}
 		}
+	}
+
+	function DrawScore()
+	{
+		ctx.drawImage(scoreImg,screenWidth-(scoreImg.width),0);
+		ctx.font = "12pt Arial";
+		ctx.fillText("" + score, 425, 25);
 	}
 	
 	function gameLoop()
@@ -134,6 +202,8 @@
 		ctx.drawImage(mushroom.image,mushroom.x,mushroom.y);
 
 		DrawPrizes();
+		drawLives();
+		DrawScore();
 		
 		animal.x += horizontalSpeed;
 		animal.y += verticalSpeed;
@@ -157,12 +227,27 @@
 		flowerImg.src = "images/flower.png";
 		acornImg.src = "images/acorn.png";
 		leafImg.src = "images/leaf.png";
+		for(var x=0; x<6; x++)
+		{
+			livesImages[x] = new Image();
+			livesImages[x].src = "images/lives" + x + ".png";
+		}
+		scoreImg.src = "images/score.png";
+	}
+
+	function drawLives()
+	{
+		ctx.drawImage(livesImages[lives],0,0);
 	}
 
 	function addEventHandlers()
 	{
 		$("#container").mousemove(function(e){
 			mushroom.x = e.pageX - (mushroom.image.width/2);
+		});
+
+		$("#BtnImgStart").click(function(){
+			toggleGameplay();
 		});
 	}
 
@@ -226,8 +311,22 @@
 
 		InitPrizes();
 		
-		setInterval(gameLoop,10);
+		//setInterval(gameLoop,10);
 	});
+
+	function toggleGameplay()
+	{
+		gameRunning = !gameRunning;
+		if(gameRunning)
+		{
+			$("#BtnImgStart").hide();
+			gameloopId = setInterval(gameLoop,10);
+		}else
+		{
+			clearInterval(gameloopId);
+		}
+	}
+
 	
 --></script>
 <title>Insert title here</title>
@@ -238,5 +337,6 @@
 		Your browser doesn't support html5
 		</canvas>
 	</div>
+	<img id="BtnImgStart" style="position: absolute; left: 200px; top: 200px; cursor: pointer; float: left; display: block; " src="./images/START-Button.png">
 </body>
 </html>
