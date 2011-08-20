@@ -7,6 +7,9 @@
 	var backgroundForestImg = new Image();
 	var mushroomImg = new Image();
 	var bearEyesClosedImg = new Image();
+	var flowerImg = new Image();
+	var leafImg = new Image();
+	var acornImg = new Image();
 	var ctx;
 	var screenWidth;
 	var screenHeight;
@@ -14,6 +17,12 @@
 	var horizontalSpeed = speed;
 	var verticalSpeed = -speed;
 	var bearAngle = 2;
+
+	var prizes = new Array();
+	function Prize(){};
+	Prize.prototype = new GameObject();
+	Prize.prototype.row = 0;
+	Prize.prototype.col = 0;
 
 	function GameObject()
 	{
@@ -62,6 +71,39 @@
 			verticalSpeed = -verticalSpeed;
 		}
 	}
+
+	function InitPrizes()
+	{
+		var count = 0;
+		for(var x=0;x<3;x++)
+		{
+			for(var y=0;y<23;y++)
+			{
+				prize = new Prize();
+				if(x==0)
+					prize.image = flowerImg;
+				if(x==1)
+					prize.image = acornImg;
+				if(x==2)
+					prize.image = leafImg;
+				prize.row = x;
+				prize.col = y;
+				prize.x = 20*prize.col + 10;
+				prize.y = 30*prize.row + 20;
+				prizes[count] = prize;
+				count++;
+			}
+		}
+	}
+
+	function DrawPrizes()
+	{
+		for(var x=0; x<prizes.length;x++)
+		{
+			currentPrize = prizes[x];
+			ctx.drawImage(currentPrize.image,prizes[x].x,prizes[x].y);
+		}
+	}
 	
 	function gameLoop()
 	{
@@ -70,6 +112,8 @@
 		ctx.drawImage(backgroundForestImg,0,0);
 		ctx.drawImage(mushroom.image,mushroom.x,mushroom.y);
 
+		DrawPrizes();
+		
 		animal.x += horizontalSpeed;
 		animal.y += verticalSpeed;
 		animal.angle += bearAngle;
@@ -88,6 +132,9 @@
 		mushroomImg.src = "images/mushroom.png";
 		backgroundForestImg.src = "images/forest1.jpg";
 		bearEyesClosedImg.src = "images/bear_eyesclosed.png";
+		flowerImg.src = "images/flower.png";
+		acornImg.src = "images/acorn.png";
+		leafImg.src = "images/leaf.png";
 	}
 
 	function addEventHandlers()
@@ -146,12 +193,17 @@
 		ctx = document.getElementById('canvas').getContext('2d');
 		screenWidth = parseInt($("#canvas").attr("width"));
 		screenHeight = parseInt($("#canvas").attr("height"));
+		
 		mushroom.image = mushroomImg;
 		mushroom.x = parseInt(screenWidth/2);
 		mushroom.y = screenHeight - 40;
+		
 		animal.image = bearEyesClosedImg;
 		animal.x = parseInt(screenWidth/2);
 		animal.y = parseInt(screenHeight/2);
+
+		InitPrizes();
+		
 		setInterval(gameLoop,10);
 	});
 	
