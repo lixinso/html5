@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script type="text/javascript" src="./js/jquery-1.4.2.js"></script>
+<script type="text/javascript"><!--
+	var backgroundForestImg = new Image();
+	var mushroomImg = new Image();
+	var ctx;
+	var screenWidth;
+	var screenHeight;
+
+	function GameObject()
+	{
+		this.x = 0;
+		this.y = 0;
+		this.image = null;
+	}
+
+	function Mushroom(){};
+
+	Mushroom.prototype = new GameObject();
+
+	var mushroom = new Mushroom();
+
+	function gameLoop()
+	{
+		ctx.clearRect(0,0,screenWidth,screenHeight);
+		ctx.save();
+		ctx.drawImage(backgroundForestImg,0,0);
+		ctx.drawImage(mushroom.image,mushroom.x,mushroom.y);
+		ctx.restore();
+	}
+
+	function loadImages()
+	{
+		mushroomImg.src = "images/mushroom.png";
+		backgroundForestImg.src = "images/forest1.jpg";
+	}
+
+	$(window).ready(function(){
+		loadImages();
+		ctx = document.getElementById('canvas').getContext('2d');
+		screenWidth = parseInt($("#canvas").attr("width"));
+		screenHeight = parseInt($("#canvas").attr("height"));
+		mushroom.image = mushroomImg;
+		mushroom.x = parseInt(screenWidth/2);
+		mushroom.y = screenHeight - 40;
+		setInterval(gameLoop,10);
+	});
+	
+--></script>
+<title>Insert title here</title>
+</head>
+<body>
+	<div id="container" style="border:1px solid;cursor:none; width:480px;height:320px;">
+		<canvas id="canvas" width="480" height="320">
+		</canvas>
+	</div>
+</body>
+</html>
