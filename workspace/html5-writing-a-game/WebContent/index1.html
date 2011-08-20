@@ -80,6 +80,7 @@
 		ctx.restore();
 
 		hasAnimalHitEdge();
+		HashAnimalHitMushroom();
 	}
 
 	function loadImages()
@@ -94,6 +95,49 @@
 		$("#container").mousemove(function(e){
 			mushroom.x = e.pageX - (mushroom.image.width/2);
 		});
+	}
+
+	function CheckIntersect(object1,object2,overlap)
+	{
+		A1 = object1.x + overlap;
+		B1 = object1.x + object1.image.width - overlap;
+		C1 = object1.y + overlap;
+		D1 = object1.y + object1.image.height - overlap;
+
+		A2 = object2.x + overlap;
+		B2 = object2.x + object2.image.width - overlap;
+		C2 = object2.y + overlap;
+		D2 = object2.y + object2.image.width - overlap;
+
+		if(A1 > A2 && A1 < B2 || B1 > A2 && B1 < B2)
+		{
+			if(C1 > C2 && C1 < D2 || D1 > C2 && D1 < D2)
+			{
+				return true;
+			}
+		}
+		return false;
+	}
+
+	function HashAnimalHitMushroom()
+	{
+		if(CheckIntersect(animal,mushroom,5))
+		{
+			if( (animal.x + animal.image.width / 2) < (mushroom.x + mushroom.image.width*0.25) )
+			{
+				horizontalSpeed = -speed;
+			}else if((animal.x + animal.image.width / 2) < (mushroom.x + mushroom.image.width*0.5) )
+			{
+				horizontalSpeed = -speed/2;
+			}else if( (animal.x + animal.image/2) < (mushroom.x + mushroom.image.width*0.75))
+			{
+				horizontalSpeed = speed/2;
+			}else
+			{
+				horizontalSpeed = speed;
+			}
+			verticalSpeed = -speed;
+		}
 	}
 	
 	$(window).ready(function(){
