@@ -23,6 +23,7 @@
 	Prize.prototype = new GameObject();
 	Prize.prototype.row = 0;
 	Prize.prototype.col = 0;
+	Prize.prototype.hit = false;
 
 	function GameObject()
 	{
@@ -101,7 +102,27 @@
 		for(var x=0; x<prizes.length;x++)
 		{
 			currentPrize = prizes[x];
-			ctx.drawImage(currentPrize.image,prizes[x].x,prizes[x].y);
+			if(!currentPrize.hit)
+			{
+				ctx.drawImage(currentPrize.image,prizes[x].x,prizes[x].y);				
+			}
+
+		}
+	}
+
+	function hasAnimalHitPrize()
+	{
+		for(var x=0; x<prizes.length;x++)
+		{
+			var prize = prizes[x];
+			if(!prize.hit)
+			{
+				if(CheckIntersect(prize,animal,0))
+				{
+					prize.hit = true;
+					verticalSpeed = speed;
+				}
+			}
 		}
 	}
 	
@@ -125,6 +146,7 @@
 
 		hasAnimalHitEdge();
 		HashAnimalHitMushroom();
+		hasAnimalHitPrize();
 	}
 
 	function loadImages()
