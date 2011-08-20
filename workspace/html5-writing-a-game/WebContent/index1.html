@@ -32,6 +32,37 @@
 
 	var animal = new Animal();
 
+	function hasAnimalHitEdge()
+	{
+		if(animal.x > screenWidth - animal.image.width)
+		{
+			if(horizontalSpeed > 0)
+				horizontalSpeed = -horizontalSpeed;
+		}
+
+		if(animal.x < -10)
+		{
+			if(horizontalSpeed < 0)
+				horizontalSpeed = -horizontalSpeed;
+		}
+
+		if(animal.y > screenHeight - animal.image.height)
+		{
+			setTimeout(function(){
+				horizontalSpeed = speed;
+				verticalSpeed = -speed;
+				animal.x = parseInt(screenWidth/2);
+				animal.y = parseInt(screenHeight/2);
+				gameLoop();
+			},2000);
+		}
+
+		if(animal.y < 0)
+		{
+			verticalSpeed = -verticalSpeed;
+		}
+	}
+	
 	function gameLoop()
 	{
 		ctx.clearRect(0,0,screenWidth,screenHeight);
@@ -47,6 +78,8 @@
 		ctx.drawImage(animal.image, -(animal.image.width/2),-(animal.image.height/2));
 		
 		ctx.restore();
+
+		hasAnimalHitEdge();
 	}
 
 	function loadImages()
@@ -84,6 +117,7 @@
 <body>
 	<div id="container" style="border:1px solid;cursor:none; width:480px;height:320px;">
 		<canvas id="canvas" width="480" height="320">
+		Your browser doesn't support html5
 		</canvas>
 	</div>
 </body>
