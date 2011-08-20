@@ -38,7 +38,15 @@
 		backgroundForestImg.src = "images/forest1.jpg";
 	}
 
+	function addEventHandlers()
+	{
+		$("#container").mousemove(function(e){
+			mushroom.x = e.pageX - (mushroom.image.width/2);
+		});
+	}
+	
 	$(window).ready(function(){
+		addEventHandlers();
 		loadImages();
 		ctx = document.getElementById('canvas').getContext('2d');
 		screenWidth = parseInt($("#canvas").attr("width"));
