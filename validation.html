@@ -19,6 +19,6 @@
 
 <form id=testform onsubmit="return check();" >
 	<label for=email>Email</label>
-	<input name=email id=email type=email /><br/>
+	<input type=email name=email id=email type=email required="required" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"><br/>
 	<input type=submit>
 </form>
