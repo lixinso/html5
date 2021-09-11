@@ -1,1 +1,59 @@
-//https://www.npmjs.com/package/@syncfusion/ej2-charts
+<!--
+https://www.npmjs.com/package/@syncfusion/ej2-charts
+https://ej2.syncfusion.com/javascript/documentation/accumulation-chart/es5-getting-started/
+
+ndicate whether to send a cookie in a cross-site request by specifying its SameSite attribute
+https://stackoverflow.com/questions/63273838/why-am-i-getting-indicate-whether-to-send-a-cookie-in-a-cross-site-request-by-s
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>EJ2 Animation</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Typescript UI Controls">
+    <meta name="author" content="Syncfusion">
+    <!--
+    <link href="index.css" rel="stylesheet">
+    -->
+
+    <script src="https://cdn.syncfusion.com/ej2/dist/ej2.min.js" type="text/javascript"></script>
+</head>
+
+
+<script>
+    var piechart = new ej.charts.AccumulationChart({
+        series: [
+            {
+                dataSource: [{ x: 'Jan', y: 3 }, { x: 'Feb', y: 3.5 }, { x: 'Mar', y: 7 }, { x: 'Apr', y: 13.5 },
+                { x: 'May', y: 19 }, { x: 'Jun', y: 23.5 }, { x: 'Jul', y: 26 }, { x: 'Aug', y: 25 },
+                { x: 'Sep', y: 21 }, { x: 'Oct', y: 15 }],
+                xName: 'x',
+                yName: 'y'
+            }
+        ]
+    }, '#element');
+</script>
+
+
+
+
+<body>
+
+    <div id="container">
+        <div id="element"></div>
+    </div>
+
+
+    <script>
+        var ele = document.getElementById('container');
+        if (ele) {
+            ele.style.visibility = "visible";
+        }   
+    </script>
+</body>
+
+</html>
