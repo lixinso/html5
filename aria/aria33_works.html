@@ -1,0 +1,123 @@
+<!-- Need bootstrap.min.css jquery.min.js and bootstrap.min.js to make aria work!!!!!-->
+
+<head>
+    <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="description" content="Propeller is a front-end responsive framework based on Material design & Bootstrap.">
+   <meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport">
+   <title>Tab - Style - Propeller</title>
+   
+   <!-- favicon --> 
+   <!--
+   <link rel="icon" href="http://propeller.in/assets/images/favicon.ico" type="image/x-icon">
+   -->
+
+   <!-- Bootstrap --> 
+   
+   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" type="text/css" rel="stylesheet" /> 
+    <!---->
+    
+   <!-- Google Icon Font -->
+   <!--
+   <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+   <link href="css/google-icons.css" type="text/css" rel="stylesheet" />
+   -->
+
+   <!-- Example docs (CSS for helping component example file)-->
+   <!--
+   <link href="http://propeller.in/docs/css/example-docs.css" type="text/css" rel="stylesheet" />
+   -->
+
+   <!-- Propeller card -->
+   <!--
+   <link href="http://propeller.in/components/card/css/card.css" type="text/css" rel="stylesheet" />
+   -->
+
+   <!-- Propeller typography -->
+   <!--
+   <link href="http://propeller.in/components/typography/css/typography.css" type="text/css" rel="stylesheet" />
+   -->
+
+   <!-- Propeller dropdown -->
+   <!--
+   <link href="http://propeller.in/components/dropdown/css/dropdown.css" type="text/css" rel="stylesheet" />
+    -->
+
+   <!-- Propeller tab -->
+   <!--
+   <link href="css/tab.css" type="text/css" rel="stylesheet" /> 
+    -->
+
+</head>
+
+<!-- Tab -->
+<div class="pmd-content pmd-content-custom" id="content">
+
+    <div class="container"> 	
+        <!-- Basic Bootstrap tab -->
+		<section class="row component-section">
+			
+			<!-- Basic Bootstrap tab title and description -->
+			<div class="col-md-3">
+				<div id="bootstrap-basic-tab">
+					<h2>Bootstrap Tabs</h2>
+				</div>
+				<p>Bootstrap Tabs add quick, dynamic tab functionality to transition through panes of local content, even via dropdown menus.</p>
+			</div> <!-- Basic Bootstrap tab title and description end -->
+			
+			<!-- Basic Bootstrap tab example and code -->
+			<div class="col-md-9 col-sm-12"> 
+				<div class="component-box">
+					<!--Basic Bootstrap tab example -->
+					<div> 
+						<!-- Nav tabs -->
+						<ul class="nav nav-tabs" role="tablist">
+							<li role="presentation" class="active"><a href="#bootstrap-home" aria-controls="home" role="tab" data-toggle="tab">Default</a></li>
+							<li role="presentation"><a href="#bootstrap-about" aria-controls="about" role="tab" data-toggle="tab">Fixed</a></li>
+							<li role="presentation"><a href="#bootstrap-work" aria-controls="work" role="tab" data-toggle="tab">Scrollable</a></li>
+						</ul>
+						<div class="pmd-card">
+							<div class="pmd-card-body">
+								<!-- Tab panes -->
+								<div class="tab-content">
+									<div role="tablist" class="tab-pane active" id="bootstrap-home">A tab provides the affordance for displaying grouped content. A tab label succinctly describes the tab’s associated grouping of content.</div>
+									<div role="tablist" class="tab-pane" id="bootstrap-about">Fixed tabs have equal width, calculated either as the view width divided by the number of tabs, or based on the widest tab label. To navigate between fixed tabs, touch the tab or swipe the content area left or right.</div>
+									<div role="tablist" class="tab-pane" id="bootstrap-work">To navigate between scrollable tabs, touch the tab or swipe the content area left or right. To scroll the tabs without navigating, swipe the tabs left or right.</div>
+								</div>
+							</div>
+						</div>
+					</div> <!--Basic Bootstrap tab example end-->
+					
+				</div>
+			</div> <!-- end Basic Bootstrap example and code -->
+			
+		</section><!-- end Basic Bootstrap tab --> 
+
+    </div>
+</div>
+
+
+
+
+
+<!-- Jquery js -->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<!-- Bootstrap js -->
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+
+<!-- Propeller dropdown -->
+<!--
+<script type="text/javascript" src="http://propeller.in/components/dropdown/js/dropdown.js"></script>
+-->
+
+<!-- Propeller tabs js -->
+<!--
+<script type="text/javascript" language="javascript" src="js/tab-scrollable.js"></script>
+<script type="text/javascript">
+	$(document).ready( function() {
+		$('.pmd-tabs').pmdTab();
+	});
+</script>
+-->
