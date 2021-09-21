@@ -50,7 +50,37 @@ var myChart = new Chart(ctx, {
             legend: {
                display: false
             }
+        },
+        'onClick' : function (evt, item) {
+            console.log ('legend onClick', evt);
+            console.log('legd item', item);        
+            alert(item[0].index); // <== this works
+
+
+
         }
     }
 });
+
+/*
+document.getElementById("myChart").onclick = function(evt)
+{   
+    var activePoints = myChart.getElementsAtEvent(evt);
+
+    if(activePoints.length > 0)
+    {
+      //get the internal index of slice in pie chart
+      var clickedElementindex = activePoints[0]["_index"];
+
+      //get specific label by index 
+      var label = myChart.data.labels[clickedElementindex];
+
+      //get value by index      
+      var value = myChart.data.datasets[0].data[clickedElementindex];
+
+   }
+}*/
+
+
+
 </script>
