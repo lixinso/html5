@@ -17,8 +17,12 @@
 
 <!-- Bar chart -->
 
+
+
 <canvas id="myChart" width="400" height="400"></canvas>
 <script>
+
+
 var ctx = document.getElementById('myChart').getContext('2d');
 var myChart = new Chart(ctx, {
     //type: 'bar',
@@ -43,7 +47,17 @@ var myChart = new Chart(ctx, {
     options: {
         scales: {
             y: {
-                beginAtZero: true
+                beginAtZero: true,
+                grid:{
+                   display:false,
+                   //drawBorder: false,
+                }
+            },
+            x: {
+                grid:{
+                    display:false,
+                    //drawBorder: false,
+                }
             }
         },
         plugins:{   
