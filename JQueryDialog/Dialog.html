@@ -1,1 +1,51 @@
+
+<!--
 https://www.geeksforgeeks.org/jquery-ui-dialog-buttons-option/
+-->
+
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<link href=
+	"https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css"
+	rel="stylesheet">
+
+	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+	<script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js">
+	</script>
+
+	<script>
+		$(function () {
+			$("#gfg").dialog({
+				autoOpen: false,
+				buttons: [
+					{
+						text: "Ok",
+						click: function () {
+							$(this).dialog("close");
+						}
+					}
+				]
+			});
+			$("#geeks").click(function () {
+				$("#gfg").dialog("open");
+			});
+		});
+	</script>
+</head>
+
+<body style="text-align: center;">
+	<h1>GeeksforGeeks</h1>
+	<h3>jQuery UI Dialog buttons Option</h3>
+
+	<button id="geeks">Open Dialog</button>
+
+	<div id="gfg" title="GeeksforGeeks">
+		Welcome to GeeksforGeeks
+	</div>
+</body>
+
+</html>
