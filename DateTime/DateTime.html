@@ -1,9 +1,10 @@
+
+<!-- 
 JavaScript Long Dates.
 Long dates are most often written with a "MMM DD YYYY" syntax like this:
 
 Example
 const d = new Date("Mar 25 2015");
-
 
 https://www.w3schools.com/js/js_date_formats.asp
 
@@ -17,5 +18,28 @@ let current_datetime = new Date()
 let formatted_date = current_datetime.getDate() + "-" + months[current_datetime.getMonth()] + "-" + current_datetime.getFullYear()
 console.log(formatted_date)
 
-
 https://codehandbook.org/javascript-date-format/
+-->
+
+<html>
+
+    <script>
+
+        function formateDate(dt){
+            const months = ["Jan", "Feb", "Mar","Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+            let formatted_date = months[dt.getMonth()] + " " + dt.getDate() + ", " + dt.getFullYear()
+            console.log(formatted_date)
+            return formatted_date;
+        }
+
+
+        let current_datetime = new Date();
+        console.log(current_datetime.toString())
+
+        var result = formateDate(current_datetime);
+
+        alert(result);
+
+    </script>
+
+</html>
