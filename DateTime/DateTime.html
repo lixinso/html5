@@ -6,3 +6,13 @@ const d = new Date("Mar 25 2015");
 
 
 https://www.w3schools.com/js/js_date_formats.asp
+
+
+
+const months = ["JAN", "FEB", "MAR","APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
+let current_datetime = new Date()
+let formatted_date = current_datetime.getDate() + "-" + months[current_datetime.getMonth()] + "-" + current_datetime.getFullYear()
+console.log(formatted_date)
+
+
+https://codehandbook.org/javascript-date-format/
