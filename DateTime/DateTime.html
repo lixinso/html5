@@ -25,18 +25,17 @@ https://codehandbook.org/javascript-date-format/
 
     <script>
 
-        function formateDate(dt){
+        function formateDate(dtstr){
+
+            var dt = new Date(dtstr);
+
             const months = ["Jan", "Feb", "Mar","Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
             let formatted_date = months[dt.getMonth()] + " " + dt.getDate() + ", " + dt.getFullYear()
             console.log(formatted_date)
             return formatted_date;
         }
 
-
-        let current_datetime = new Date();
-        console.log(current_datetime.toString())
-
-        var result = formateDate(current_datetime);
+        var result = formateDate("2021-09-08T05:29:52.867");
 
         alert(result);
 
