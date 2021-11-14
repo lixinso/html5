@@ -5,12 +5,28 @@
 
   var people = [
       {
-          "f_name": "john",
+          "f_name": "111",
           "l_name": "doe",
-          "sequence": "0",
+          "sequence": "1",
           "title" : "president",
           "url" : "google.com",
-          "color" : "333333",
+          "color" : "",
+      },
+      {
+          "f_name": "333",
+          "l_name": "doe",
+          "sequence": "3",
+          "title" : "president",
+          "url" : "google.com",
+          "color" : "",
+      },
+      {
+          "f_name": "222",
+          "l_name": "doe",
+          "sequence": "2",
+          "title" : "president",
+          "url" : "google.com",
+          "color" : "",
       }
       // etc
   ];
@@ -23,8 +39,11 @@
               return (b[prop] > a[prop]) ? 1 : ((b[prop] < a[prop]) ? -1 : 0);
           }
       });
-      renderResults();
+      //renderResults();
   }
-  
+
+  sortResults("sequence", true);
+
+  alert(JSON.stringify(people));
   
 </script>
