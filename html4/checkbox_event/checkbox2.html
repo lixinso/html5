@@ -16,13 +16,13 @@
  
 <form>
   <p>
-    <input type="checkbox" name="newsletter" value="Hourly" checked="checked">
+    <input type="checkbox" id="checkbox1" name="newsletter" value="Hourly" checked="checked">
  
-    <input type="checkbox" name="newsletter" value="Daily">
-    <input type="checkbox" name="newsletter" value="Weekly">
+    <input type="checkbox" id="checkbox1" name="newsletter" value="Daily">
+    <input type="checkbox" id="checkbox1" name="newsletter" value="Weekly">
  
-    <input type="checkbox" name="newsletter" value="Monthly" checked>
-    <input type="checkbox" name="newsletter" value="Yearly">
+    <input type="checkbox" id="checkbox1" name="newsletter" value="Monthly" checked>
+    <input type="checkbox" id="checkbox1" name="newsletter" value="Yearly">
   </p>
 </form>
 <div></div>
@@ -33,8 +33,11 @@ var countChecked = function() {
   $( "div" ).text( n + (n === 1 ? " is" : " are") + " checked!" );
 };
 countChecked();
+
+alert( $('input[id="checkbox2"]:checked')[1]);
  
 $( "input[type=checkbox]" ).on( "click", countChecked );
+
 </script>
  
 </body>
