@@ -1,1 +1,35 @@
 
+
+
+function CallWebApi(urlpath, 
+    method, 
+    requestdata, 
+    onsuccessfunc, 
+    onerrorfunc = function (XMLHttpRequest, textStatus, errorThrown) {
+                console.log(XMLHttpRequest.responseText);
+                console.log(textStatus);
+                console.log(errorThrown);
+            }) 
+    {
+
+        var ajaxRequestConfig = 
+            {
+                type: method,
+                url: urlpath,
+                async: false,
+                success: function(data){
+                    console.log("success");
+                    onsuccessfunc(data);
+                },
+                error: onerrorfunc
+            }
+
+        console.log("ajaxRequestConfig");
+        console.log(ajaxRequestConfig);
+
+        var ajxReq = $.ajax(
+            ajaxRequestConfig
+        );
+
+        return ajxReq;
+}
