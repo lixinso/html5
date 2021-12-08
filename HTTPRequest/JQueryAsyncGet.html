@@ -1,0 +1,54 @@
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js"></script>
+<link href="https://code.jquery.com/ui/1.12.1/themes/ui-lightness/jquery-ui.css" rel="stylesheet" />
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<script>
+
+function CallWebApi(urlpath, 
+    method, 
+    requestdata, 
+    onsuccessfunc, 
+    onerrorfunc = function (XMLHttpRequest, textStatus, errorThrown) {
+                console.log(XMLHttpRequest.responseText);
+                console.log(textStatus);
+                console.log(errorThrown);
+            }) 
+    {
+
+        var ajaxRequestConfig = 
+            {
+                type: method,
+                url: urlpath,
+                async: false,
+                success: function(data){
+                    console.log("success");
+                    onsuccessfunc(data);
+                },
+                error: onerrorfunc
+            }
+
+        console.log("ajaxRequestConfig");
+        console.log(ajaxRequestConfig);
+
+        var ajxReq = $.ajax(
+            ajaxRequestConfig
+        );
+
+        return ajxReq;
+}
+
+
+
+CallWebApi("https://msdnstaticwebsite.z13.web.core.windows.net/", 
+    "GET", 
+    null, 
+    function(data){
+        alert(data);
+    }, 
+    onerrorfunc = function (XMLHttpRequest, textStatus, errorThrown) {
+                console.log(XMLHttpRequest.responseText);
+                console.log(textStatus);
+                console.log(errorThrown);
+            }) 
+    
+</script>

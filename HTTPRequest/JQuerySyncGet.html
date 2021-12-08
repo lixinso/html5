@@ -1,40 +1,32 @@
+
 <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js"></script>
 <link href="https://code.jquery.com/ui/1.12.1/themes/ui-lightness/jquery-ui.css" rel="stylesheet" />
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 <script>
 
-function CallWebApi(urlpath, 
-    method, 
-    requestdata, 
-    onsuccessfunc, 
-    onerrorfunc = function (XMLHttpRequest, textStatus, errorThrown) {
-                console.log(XMLHttpRequest.responseText);
-                console.log(textStatus);
-                console.log(errorThrown);
-            }) 
-    {
+    function getURLText(url){
+        return $.ajax({
+            type: "GET",
+            url: url,
+            cache: false,
+            async: false
+        }).responseText;
+    }
 
-        var ajaxRequestConfig = 
-            {
-                type: method,
-                url: urlpath,
-                async: false,
-                success: function(data){
-                    console.log("success");
-                    onsuccessfunc(data);
-                },
-                error: onerrorfunc
-            }
+    function getURLJson(url){
+        return $.ajax({
+            type: "GET",
+            url: url,
+            cache: false,
+            async: false
+        }).responseJson;
+    }
 
-        console.log("ajaxRequestConfig");
-        console.log(ajaxRequestConfig);
 
-        var ajxReq = $.ajax(
-            ajaxRequestConfig
-        );
+    //example use
+    var msg=getURLJson("https://msdnstaticwebsite.z13.web.core.windows.net/");
+    alert(msg);
 
-        return ajxReq;
-}
-    
+
 </script>
