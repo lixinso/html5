@@ -5,6 +5,21 @@ https://stackoverflow.com/questions/11338592/how-can-i-bind-to-the-change-event-
 http://jsbin.com/ikeses/200/edit?html,css,js,console,output
 
 -->
-
+ 
+<!DOCTYPE html>
 <html>
-</html>
+<head>
+<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+</head>
+<body>
+  <input type="textarea" cols="10" rows="4" />
+</body>
+</html>  
+  
+<script>
+   
+$('input[type=textarea]').bind('input propertychange', function() {
+  console.log(this.value);
+});   
+   
+</script>
