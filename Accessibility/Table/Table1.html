@@ -1,0 +1,225 @@
+<html>
+
+<header>
+
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #ddd;
+            padding: 2em 15px;
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        p {
+            text-align: center;
+            margin-bottom: 2em;
+        }
+
+
+        /* // BASIC RESPONSIVE TABLE LAYOUT 
+            // vertically stacked when viewport < 768px
+            // horizontally stacked when viewport >= 768px */
+        .table-a11y {
+            width: 100%;
+
+            caption {
+                position: absolute !important;
+                clip: rect(1px, 1px, 1px, 1px);
+            }
+
+            thead,
+            tbody,
+            tfoot {
+                width: 100%;
+            }
+
+            tr {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                width: 100%;
+
+                @media (min-width: 768px) {
+                    flex-direction: row;
+                }
+            }
+
+            th,
+            td {
+                word-break: break-all;
+            }
+        }
+
+        /* // END: BASIC RESPONSIVE TABLE LAYOUT */
+
+
+        /* THIS CSS IS NOT REQUIRED TO GIVE ACCESSIBILITY+RESPONSIVENESS TO A TABLE */
+        /* ONLY FOR DEMO PURPOSE */
+        .table-design {
+            max-width: 900px;
+            font-size: 14px;
+            margin: 0 auto;
+
+            /* TABLE HEADER STYLING */
+            thead {
+                background: #333;
+                color: #fff;
+
+                th {
+                    padding: 15px 10px;
+                    text-align: left;
+                }
+            }
+
+            /* DISPLAY EACH ROW AS A CARD */
+            tbody {
+                tr {
+                    background: #fff;
+                    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2);
+                    margin-bottom: 15px;
+                }
+
+                th {
+                    font-weight: normal;
+                }
+
+                th,
+                td {
+                    padding: 12px 10px;
+
+                    @media (max-width: 767px) {
+                        display: flex;
+                    }
+                }
+            }
+
+            /* INDIVIDUAL CELL HEADING STYLES */
+            tbody {
+                .col-header {
+                    flex: 0 0 140px;
+                    width: 140px;
+                    padding: 12px 10px;
+                    margin: -12px 10px -12px -10px;
+                    background: #333;
+                    color: #fff;
+                }
+            }
+        }
+
+        /* MOBILE MODE */
+        @media (max-width: 767px) {
+            .table-design {
+
+                /* even if table headers are visually hidden, it's necessary to set row as block level to avoid weird bug on VoiceOver */
+                thead {
+                    position: absolute !important;
+                    clip: rect(1px, 1px, 1px, 1px);
+                }
+            }
+        }
+
+        /* TABLET MODE */
+        @media (min-width: 768px) {
+            .table-design {
+                background: #fff;
+                box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2);
+
+                /* ROWS MOBILE STYLING RESET & STYLING FOR TABLET */
+                tbody {
+                    tr {
+                        background: none;
+                        box-shadow: none;
+                        margin-bottom: 0;
+
+                        &:hover {
+                            background: #e5f5fa;
+                        }
+                    }
+                }
+
+                /* SET CELLS WIDTH */
+                thead,
+                tbody {
+
+                    th,
+                    td {
+                        width: 25%;
+                    }
+                }
+
+                /* HIDE INVIDUAL CELL HEADING */
+                tbody .col-header {
+                    display: none;
+                }
+            }
+        }
+    </style>
+
+</header>
+
+<body>
+
+    <h1><a href="https://medium.com/@d.mercier84/how-to-build-accessible-responsive-html-table-a930386485c4">Accessible
+            & Responsive HTML table</a></h1>
+    <p>Read more at <a
+            href="https://medium.com/@d.mercier84/how-to-build-accessible-responsive-html-table-a930386485c4">https://medium.com/@d.mercier84/how-to-build-accessible-responsive-html-table-a930386485c4</a>
+    </p>
+
+    <table class="table-design table-a11y" role="table">
+        <caption>Table Caption</caption>
+        <thead>
+            <tr role="row">
+                <th id="columnheader1" role="columnheader" scope="col">Column Header 1</th>
+                <th id="columnheader2" role="columnheader" scope="col">Column Header 2</th>
+                <th id="columnheader3" role="columnheader" scope="col">Column Header 3</th>
+                <th id="columnheader4" role="columnheader" scope="col">Column Header 4</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr role="row">
+                <th id="item1" role="rowheader" scope="row" headers="columnheader1"><span class="col-header"
+                        aria-hidden="true">Column Header 1</span>Row 1 - Cell 1</th>
+                <td role="cell" headers="item1 columnheader2"><span class="col-header" aria-hidden="true">Column Header
+                        2</span>Row 1 - Cell 2</td>
+                <td role="cell" headers="item1 columnheader3"><span class="col-header" aria-hidden="true">Column Header
+                        3</span>Row 1 - Cell 3</td>
+                <td role="cell" headers="item1 columnheader4"><span class="col-header" aria-hidden="true">Column Header
+                        4</span>Row 1 - Cell 4</td>
+            </tr>
+            <tr role="row">
+                <th id="item2" role="rowheader" scope="row" headers="columnheader1"><span class="col-header"
+                        aria-hidden="true">Column Header 1</span>Row 2 - Cell 1</th>
+                <td role="cell" headers="item2 columnheader2"><span class="col-header" aria-hidden="true">Column Header
+                        2</span>Row 2 - Cell 2</td>
+                <td role="cell" headers="item2 columnheader3"><span class="col-header" aria-hidden="true">Column Header
+                        3</span>Row 2 - Cell 3</td>
+                <td role="cell" headers="item2 columnheader4"><span class="col-header" aria-hidden="true">Column Header
+                        4</span>Row 2 - Cell 4</td>
+            </tr>
+            <tr role="row">
+                <th id="item3" role="rowheader" scope="row" headers="columnheader1"><span class="col-header"
+                        aria-hidden="true">Column Header 1</span>Row 3 - Cell 1</th>
+                <td role="cell" headers="item3 columnheader2"><span class="col-header" aria-hidden="true">Column Header
+                        2</span>Row 3 - Cell 2</td>
+                <td role="cell" headers="item3 columnheader3"><span class="col-header" aria-hidden="true">Column Header
+                        3</span>Row 3 - Cell 3</td>
+                <td role="cell" headers="item3 columnheader4"><span class="col-header" aria-hidden="true">Column Header
+                        4</span>Row 3 - Cell 4</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+
+</html>
