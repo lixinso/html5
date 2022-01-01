@@ -6,7 +6,7 @@ Fast pass
 
 NVDO
 
-AI
+AI. https://github.com/microsoft/accessibility-insights-windows
 
 
 Aria
