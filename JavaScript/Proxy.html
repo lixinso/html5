@@ -1,0 +1,16 @@
+
+
+<script>
+
+var targetObj = {};
+var targetProxy = new Proxy(targetObj, {
+  set: function(target, key, value) {
+      console.log(`${key}set to ${value}`);
+      alert(`${key}set to ${value}`);
+      target[key] = value;
+      return true;
+  }
+});
+targetProxy.hello_world= "test1"; // console: 'hello_world set to test'
+
+</script>
